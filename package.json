@@ -12,7 +12,10 @@
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"  \"npm run webhook\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
-    "webhook": "ngrok http 5000"
+    "webhook": "./sendgrid_webhook.sh" 
+
+
+
   },
   "author": "",
   "license": "ISC",
@@ -23,11 +26,15 @@
     "cookie-session": "^2.0.0-beta.3",
     "express": "^4.16.2",
     "localtunnel": "^1.8.3",
+    "lodash": "^4.17.4",
     "mongoose": "^4.13.5",
     "nodemon": "^1.12.1",
+    "parser": "^0.1.4",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
+    "path": "^0.12.7",
     "path-parse": "^1.0.5",
+    "path-parser": "^3.0.1",
     "sendgrid": "^5.2.3",
     "sendinblue-api": "^1.0.8",
     "sib-api-v3-sdk": "^3.1.3",
