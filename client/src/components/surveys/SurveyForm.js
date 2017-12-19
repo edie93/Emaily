@@ -6,6 +6,8 @@ import {Link} from "react-router-dom";
 import SurveyField from "./SurveyField";
 import validateEmails from "../../utils/validateEmails";
 import formFields from "./formFields";
+import ReactCSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
+
 class SurveyForm extends Component {
   renderFields() {
     return _.map(formFields, ({ label, name }) => {
@@ -22,10 +24,18 @@ class SurveyForm extends Component {
   }
   render() {
     return (
-      <div>
+
+      <div className="home-inner px-5">
+      <ReactCSSTransitionGroup
+              transitionAppear={true}
+              transitionAppearTimeout={600}
+              transitionEnterTimeout={600}
+              transitionLeaveTimeout={200}
+              transitionName={'SlideOut'}
+            >
         <form onSubmit={this.props.handleSubmit (this.props.onSurveySubmit)}>
           {this.renderFields()}
-          <button type="submit"className="teal btn-flat right white-text">
+          <button type="submit"className=" blue lighten-1 btn-flat right white-text">
             Submit
             <i className = "material-icons right">done</i>
           </button>
@@ -34,6 +44,8 @@ class SurveyForm extends Component {
             <i className = "material-icons right">cancel</i>
           </Link>
         </form>
+        </ReactCSSTransitionGroup>
+
       </div>
     );
   }

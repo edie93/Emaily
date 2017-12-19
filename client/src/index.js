@@ -1,4 +1,11 @@
 import 'materialize-css/dist/css/materialize.min.css';
+import './css/bootstrap.css';
+import "./css/style.css";
+// import $ from 'jquery';
+// window.$ = window.jQuery = require('jquery');
+// import 'bootstrap/dist/js/bootstrap.min';
+
+
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
