@@ -1,5 +1,10 @@
-const keys = require("../../config/keys")
+const keys = require("../../config/keys");
+let domain = keys.redirectDomain;
+if(domain.substr(domain.length-1)=="/"){
+  domain=domain.substr(0,domain.length-1)
+};
 module.exports = survey => {
+
   return `
   <html>
     <body>
@@ -8,10 +13,10 @@ module.exports = survey => {
         <p>Please answer the following question: </p>
         <p>${survey.body}</p>
         <div>
-          <a href="${keys.redirectDomain}/api/surveys/${survey.id}/yes">Yes</a>
+          <a href="${domain}/api/surveys/${survey.id}/yes">Yes</a>
         </div>
         <div>
-          <a href="${keys.redirectDomain}/api/surveys/${survey.id}/no">No</a>
+          <a href="${domain}/api/surveys/${survey.id}/no">No</a>
         </div>
       </div>
     </body>
